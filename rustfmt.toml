@@ -1,2 +1,3 @@
 imports_granularity = "Item"
 group_imports = "One"
+edition = "2024"
