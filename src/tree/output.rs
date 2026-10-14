@@ -2454,6 +2454,8 @@ impl NodeBase for OutputNode {
         }
         if let Some(ws) = self.workspace() {
             ws.do_focus(seat, direction);
+        } else {
+            seat.focus_node(self.clone());
         }
     }
 
@@ -2729,6 +2731,10 @@ impl NodeBase for OutputNode {
                 self.button(tool.seat(), id, BTN_LEFT);
             }
         }
+    }
+
+    fn node_is_output(&self) -> bool {
+        true
     }
 }
 
