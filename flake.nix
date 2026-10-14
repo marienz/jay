@@ -445,7 +445,7 @@
           let
             inherit (self.packages.${pkgs.stdenv.hostPlatform.system}) jay;
             rust = (rustBinFor pkgs).stable.latest.default.override {
-              extensions = [ "rust-src" ];
+              extensions = [ "rust-src" "rust-analyzer" ];
             };
           in
           pkgs.mkShell {
